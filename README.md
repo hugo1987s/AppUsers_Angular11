@@ -1,6 +1,6 @@
 # AppUsuarios
 
-This project is about an Angular 11.2.9 frontend fetching data from a public API, which returns some random people data.
+This project is about an Angular 11.2.9 frontend, using Bootstrap, fetching data from a public API, which returns some random people data.
 You can see the result build in: https://appusers.netlify.app/
 
 ## Development server
