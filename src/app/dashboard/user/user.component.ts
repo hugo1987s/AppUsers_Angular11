@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,15 +8,34 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
   id: number;
+  loading : boolean = true;
+  name : string;
+  email : string;
+  gender : string;
+  status : string;
+  imgUrl : string;
 
-  constructor(private aRoute: ActivatedRoute) { 
+  constructor(private aRoute: ActivatedRoute, private userService : UserService) { 
     this.id = +this.aRoute.snapshot.paramMap.get('id');
   }
 
 
   ngOnInit(): void {
+    this.getUsuario();
   }
 
+  getUsuario() : void {
+      this.userService.getUser(this.id).subscribe(data => {
+        console.log(data.data);
+        this.name = data.data.name;
+        this.email = data.data.email;
+        this.gender = data.data.gender;
+        this.status = data.data.status;
+        this.imgUrl = data.data.imgUrl; 
+
+        this.loading = false;
+    });
+  }
+  
 }
