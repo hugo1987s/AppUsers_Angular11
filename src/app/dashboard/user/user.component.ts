@@ -22,17 +22,17 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getUsuario();
+    this.getUser();
   }
 
-  getUsuario() : void {
+  getUser() : void {
       this.userService.getUser(this.id).subscribe(data => {
         console.log(data.data);
         this.name = data.data.name;
         this.email = data.data.email;
         this.gender = data.data.gender;
         this.status = data.data.status;
-        this.imgUrl = data.data.imgUrl; 
+        this.imgUrl = 'https://picsum.photos/250/250'; //data.data.imgUrl; 
 
         this.loading = false;
     });
