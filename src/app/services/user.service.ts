@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   url = 'https://gorest.co.in/public-api/users';
-  token = 'bd9dce78ba784b0d145298835e49e24d5f3e5f5a96a2f63acdaa37a157229977';
+  token = 'yourtoken';
 
   constructor(private http:HttpClient) { }
 
